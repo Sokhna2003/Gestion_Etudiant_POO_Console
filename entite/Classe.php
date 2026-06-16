@@ -8,7 +8,7 @@ class Classe {
         return $this->id;
     }
 
-    public function getlibelle(){
+    public function getLibelle(){
         return $this->libelle;
     }
 
@@ -20,15 +20,7 @@ class Classe {
         $this->libelle = $libelle;
     }
 
-    public function afficher(){
-        return "ID : " . $this->id . "\n" .
-            "Nom : " . $this->libelle . "\n" ;
-    }
-
-    // public function saisirClasse(){
-    //     $this->id = readline("Entrez l'ID :");
-    //     $this->libelle = readline("Entrez le libelle :");
-    // }
+    
 }
 
 ?>

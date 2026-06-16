@@ -23,24 +23,25 @@ do {
     $choix = readline("Entrez votre choix : ");
     switch ($choix) {
         case '1':
-            $nouveauEtudiant = saisirEtudiant($listeClasse);
+            $nouveauEtudiant = EtudiantView::saisirEtudiant($listeClasse);
             if ($nouveauEtudiant !== null) {
-                ajouterEtudiant($listeEtudiant, $nouveauEtudiant);
+                EtudiantService::ajouterEtudiant($listeEtudiant, $nouveauEtudiant);
             }
             break;
         case '2':
-            listerEtudiants($listeEtudiant);
+            EtudiantView::listerEtudiants($listeEtudiant);
             break;
         case '3':
-            $nouvelleClasse = saisirClasse();
-            ajouterClasse($listeClasse, $nouvelleClasse);
+            $nouvelleClasse = ClasseView::saisirClasse();
+            ClasseService::ajouterClasse($listeClasse, $nouvelleClasse);
             break;
         case '4':
-            listerClasses($listeClasse);
+            ClasseView::listerClasses($listeClasse);
             break;
         case '5':
             $idClasseRechercher = readline("Entrez l'id de la classe a afficher : ");
-            listerEtudiantsParClasse($listeEtudiant,$idClasseRechercher);
+            $resultat = EtudiantService::getEtudiantsParClasse($listeEtudiant,$idClasseRechercher);
+            EtudiantView::listerEtudiantsParClasse($resultat);
             break;
         case '6':
             echo "Au revoir \n";

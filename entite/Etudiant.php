@@ -60,18 +60,6 @@ class Etudiant {
         $this->classe = $classe; 
     }
 
-    public function afficher(){
-        // recupere le libelle de la classe directement depuis l'objet classe associe
-        $nomClasse = $this->classe ? $this->classe->getLibelle() : "Aucune";
-        return "ID : " . $this->id . "\n" .
-            "Nom : " . $this->nom . "\n" .
-            "Prenom : " . $this->prenom . "\n" .
-            "Matricule : " . $this->matricule . "\n" .
-            "Email : " . $this->email . "\n" .
-            "Telephone : " . $this->telephone . "\n" .
-            "Adresse : " . $this->adresse . "\n" .
-            "Classe : " . $nomClasse . "\n" ;
-    }
 
 }
 

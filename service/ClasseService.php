@@ -1,22 +1,24 @@
 <?php
 require_once "entite/Classe.php";
 
-function ajouterClasse(&$listeClasse, $classe){
-    $listeClasse[] = $classe;
-    echo "Classe ajouter avec succes \n";
-}
+class ClasseService {
 
-function getClasseById($listeClasse, $id){
-    foreach ($listeClasse as $cl) {
-        if ($cl->getId() == $id) {
-            echo "Classe trouver\n";
-            echo $cl->afficher();
-            return $cl;
-        }
+    public static function ajouterClasse(&$listeClasse, $classe){
+        $listeClasse[] = $classe;
+        echo "Classe ajouter avec succes \n";
     }
-    echo "Aucun classe trouver l'id : " . $id . "\n";
-    return null;
-}
 
+    public static function getClasseById($listeClasse, $id){
+        foreach ($listeClasse as $cl) {
+            if ($cl->getId() == $id) {
+                return $cl;
+            }
+        }
+        echo "Aucun classe trouver l'id : " . $id . "\n";
+        return null;
+    }
+
+
+}
 
 ?>
